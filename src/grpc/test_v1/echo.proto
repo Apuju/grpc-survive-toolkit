@@ -1,6 +1,8 @@
 syntax = "proto3";
 
-package test;
+package test_v1;
+
+option go_package = ".;test_v1";
 
 service EchoServer {
     rpc Echo(EchoRequest) returns(EchoReply) {}

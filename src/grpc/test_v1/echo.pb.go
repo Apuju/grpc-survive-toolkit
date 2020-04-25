@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.21.0
 // 	protoc        v3.11.4
-// source: grpc/test.v1/test.proto
+// source: echo.proto
 
-package test
+package test_v1
 
 import (
 	context "context"
@@ -40,7 +40,7 @@ type EchoRequest struct {
 func (x *EchoRequest) Reset() {
 	*x = EchoRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_test_v1_test_proto_msgTypes[0]
+		mi := &file_echo_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -53,7 +53,7 @@ func (x *EchoRequest) String() string {
 func (*EchoRequest) ProtoMessage() {}
 
 func (x *EchoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_test_v1_test_proto_msgTypes[0]
+	mi := &file_echo_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -66,7 +66,7 @@ func (x *EchoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EchoRequest.ProtoReflect.Descriptor instead.
 func (*EchoRequest) Descriptor() ([]byte, []int) {
-	return file_grpc_test_v1_test_proto_rawDescGZIP(), []int{0}
+	return file_echo_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *EchoRequest) GetMessage() string {
@@ -88,7 +88,7 @@ type EchoReply struct {
 func (x *EchoReply) Reset() {
 	*x = EchoReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_test_v1_test_proto_msgTypes[1]
+		mi := &file_echo_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -101,7 +101,7 @@ func (x *EchoReply) String() string {
 func (*EchoReply) ProtoMessage() {}
 
 func (x *EchoReply) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_test_v1_test_proto_msgTypes[1]
+	mi := &file_echo_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -114,7 +114,7 @@ func (x *EchoReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EchoReply.ProtoReflect.Descriptor instead.
 func (*EchoReply) Descriptor() ([]byte, []int) {
-	return file_grpc_test_v1_test_proto_rawDescGZIP(), []int{1}
+	return file_echo_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *EchoReply) GetMessage() string {
@@ -131,44 +131,45 @@ func (x *EchoReply) GetUnixtime() int64 {
 	return 0
 }
 
-var File_grpc_test_v1_test_proto protoreflect.FileDescriptor
+var File_echo_proto protoreflect.FileDescriptor
 
-var file_grpc_test_v1_test_proto_rawDesc = []byte{
-	0x0a, 0x17, 0x67, 0x72, 0x70, 0x63, 0x2f, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x76, 0x31, 0x2f, 0x74,
-	0x65, 0x73, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x04, 0x74, 0x65, 0x73, 0x74, 0x22,
-	0x27, 0x0a, 0x0b, 0x45, 0x63, 0x68, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x18,
-	0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x41, 0x0a, 0x09, 0x45, 0x63, 0x68, 0x6f,
-	0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12,
-	0x1a, 0x0a, 0x08, 0x75, 0x6e, 0x69, 0x78, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x03, 0x52, 0x08, 0x75, 0x6e, 0x69, 0x78, 0x74, 0x69, 0x6d, 0x65, 0x32, 0x3a, 0x0a, 0x0a, 0x45,
-	0x63, 0x68, 0x6f, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x12, 0x2c, 0x0a, 0x04, 0x45, 0x63, 0x68,
-	0x6f, 0x12, 0x11, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x45, 0x63, 0x68, 0x6f, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x45, 0x63, 0x68, 0x6f,
-	0x52, 0x65, 0x70, 0x6c, 0x79, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+var file_echo_proto_rawDesc = []byte{
+	0x0a, 0x0a, 0x65, 0x63, 0x68, 0x6f, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x74, 0x65,
+	0x73, 0x74, 0x5f, 0x76, 0x31, 0x22, 0x27, 0x0a, 0x0b, 0x45, 0x63, 0x68, 0x6f, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x41,
+	0x0a, 0x09, 0x45, 0x63, 0x68, 0x6f, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x18, 0x0a, 0x07, 0x6d,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x75, 0x6e, 0x69, 0x78, 0x74, 0x69, 0x6d,
+	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x75, 0x6e, 0x69, 0x78, 0x74, 0x69, 0x6d,
+	0x65, 0x32, 0x40, 0x0a, 0x0a, 0x45, 0x63, 0x68, 0x6f, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x12,
+	0x32, 0x0a, 0x04, 0x45, 0x63, 0x68, 0x6f, 0x12, 0x14, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x5f, 0x76,
+	0x31, 0x2e, 0x45, 0x63, 0x68, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e,
+	0x74, 0x65, 0x73, 0x74, 0x5f, 0x76, 0x31, 0x2e, 0x45, 0x63, 0x68, 0x6f, 0x52, 0x65, 0x70, 0x6c,
+	0x79, 0x22, 0x00, 0x42, 0x0b, 0x5a, 0x09, 0x2e, 0x3b, 0x74, 0x65, 0x73, 0x74, 0x5f, 0x76, 0x31,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_grpc_test_v1_test_proto_rawDescOnce sync.Once
-	file_grpc_test_v1_test_proto_rawDescData = file_grpc_test_v1_test_proto_rawDesc
+	file_echo_proto_rawDescOnce sync.Once
+	file_echo_proto_rawDescData = file_echo_proto_rawDesc
 )
 
-func file_grpc_test_v1_test_proto_rawDescGZIP() []byte {
-	file_grpc_test_v1_test_proto_rawDescOnce.Do(func() {
-		file_grpc_test_v1_test_proto_rawDescData = protoimpl.X.CompressGZIP(file_grpc_test_v1_test_proto_rawDescData)
+func file_echo_proto_rawDescGZIP() []byte {
+	file_echo_proto_rawDescOnce.Do(func() {
+		file_echo_proto_rawDescData = protoimpl.X.CompressGZIP(file_echo_proto_rawDescData)
 	})
-	return file_grpc_test_v1_test_proto_rawDescData
+	return file_echo_proto_rawDescData
 }
 
-var file_grpc_test_v1_test_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_grpc_test_v1_test_proto_goTypes = []interface{}{
-	(*EchoRequest)(nil), // 0: test.EchoRequest
-	(*EchoReply)(nil),   // 1: test.EchoReply
+var file_echo_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_echo_proto_goTypes = []interface{}{
+	(*EchoRequest)(nil), // 0: test_v1.EchoRequest
+	(*EchoReply)(nil),   // 1: test_v1.EchoReply
 }
-var file_grpc_test_v1_test_proto_depIdxs = []int32{
-	0, // 0: test.EchoServer.Echo:input_type -> test.EchoRequest
-	1, // 1: test.EchoServer.Echo:output_type -> test.EchoReply
+var file_echo_proto_depIdxs = []int32{
+	0, // 0: test_v1.EchoServer.Echo:input_type -> test_v1.EchoRequest
+	1, // 1: test_v1.EchoServer.Echo:output_type -> test_v1.EchoReply
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -176,13 +177,13 @@ var file_grpc_test_v1_test_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_grpc_test_v1_test_proto_init() }
-func file_grpc_test_v1_test_proto_init() {
-	if File_grpc_test_v1_test_proto != nil {
+func init() { file_echo_proto_init() }
+func file_echo_proto_init() {
+	if File_echo_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_grpc_test_v1_test_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_echo_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EchoRequest); i {
 			case 0:
 				return &v.state
@@ -194,7 +195,7 @@ func file_grpc_test_v1_test_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_test_v1_test_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_echo_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EchoReply); i {
 			case 0:
 				return &v.state
@@ -211,20 +212,20 @@ func file_grpc_test_v1_test_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_grpc_test_v1_test_proto_rawDesc,
+			RawDescriptor: file_echo_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_grpc_test_v1_test_proto_goTypes,
-		DependencyIndexes: file_grpc_test_v1_test_proto_depIdxs,
-		MessageInfos:      file_grpc_test_v1_test_proto_msgTypes,
+		GoTypes:           file_echo_proto_goTypes,
+		DependencyIndexes: file_echo_proto_depIdxs,
+		MessageInfos:      file_echo_proto_msgTypes,
 	}.Build()
-	File_grpc_test_v1_test_proto = out.File
-	file_grpc_test_v1_test_proto_rawDesc = nil
-	file_grpc_test_v1_test_proto_goTypes = nil
-	file_grpc_test_v1_test_proto_depIdxs = nil
+	File_echo_proto = out.File
+	file_echo_proto_rawDesc = nil
+	file_echo_proto_goTypes = nil
+	file_echo_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -252,7 +253,7 @@ func NewEchoServerClient(cc grpc.ClientConnInterface) EchoServerClient {
 
 func (c *echoServerClient) Echo(ctx context.Context, in *EchoRequest, opts ...grpc.CallOption) (*EchoReply, error) {
 	out := new(EchoReply)
-	err := c.cc.Invoke(ctx, "/test.EchoServer/Echo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/test_v1.EchoServer/Echo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -286,7 +287,7 @@ func _EchoServer_Echo_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/test.EchoServer/Echo",
+		FullMethod: "/test_v1.EchoServer/Echo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(EchoServerServer).Echo(ctx, req.(*EchoRequest))
@@ -295,7 +296,7 @@ func _EchoServer_Echo_Handler(srv interface{}, ctx context.Context, dec func(int
 }
 
 var _EchoServer_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "test.EchoServer",
+	ServiceName: "test_v1.EchoServer",
 	HandlerType: (*EchoServerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -304,5 +305,5 @@ var _EchoServer_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "grpc/test.v1/test.proto",
+	Metadata: "echo.proto",
 }
