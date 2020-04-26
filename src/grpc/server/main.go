@@ -14,17 +14,15 @@ func main() {
 
 	grpcServer := grpc.NewServer()
 
-	go func() {
-		lis, err := net.Listen("tcp", ":50051")
-		if err != nil {
-			log.Fatalf("failed to listen: %v", err)
-		}
+	lis, err := net.Listen("tcp", ":50051")
+	if err != nil {
+		log.Fatalf("failed to listen: %v", err)
+	}
 
-		if err := grpcServer.Serve(lis); err != nil {
-			log.Fatalf("failed to serve: %v", err)
-		}
-	}()
-
-	fmt.Print("grpc serving\n")
+	fmt.Print("grpc serving...\n")
 	grpcTest.RegisterEchoServerServer(grpcServer, &echo.Echo{})
+
+	if err := grpcServer.Serve(lis); err != nil {
+		log.Fatalf("failed to serve: %v", err)
+	}
 }
